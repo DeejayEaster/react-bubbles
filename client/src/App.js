@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
 
 import Login from "./components/Login";
 import PrivateRoute from "./components/utils/PrivateRoute";
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);

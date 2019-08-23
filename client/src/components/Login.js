@@ -7,7 +7,6 @@ const LoginForm = props => {
     username: "Lambda School",
     password: "i<3Lambd4"
   });
-  const [loading, setLoading] = useState(false);
 
   const changeHandler = event => {
     event.preventDefault();
@@ -20,15 +19,15 @@ const LoginForm = props => {
 
   const login = e => {
     e.preventDefault();
-    setName({ ...name, isLoading: true });
+
     axios
       .post("http://localhost:5000/api/login", name)
       .then(res => {
         console.log(res);
         localStorage.setItem("token", res.data.payload);
+        props.history.push("/protected");
       })
       .catch(err => console.log(err.response));
-    props.history.push("/protected");
   };
 
   return (
