@@ -4,8 +4,8 @@ import axios from "axios";
 
 const LoginForm = props => {
   const [name, setName] = useState({
-    username: "",
-    password: ""
+    username: "Lambda School",
+    password: "i<3Lambd4"
   });
   const [loading, setLoading] = useState(false);
 
